@@ -13,6 +13,9 @@ const AllCampusesView = (props) => {
       {props.allCampuses.map((campus) => (
         <div key={campus.id}>
           <Link to={`/campus/${campus.id}`}>
+            <img src ={campus.imageURL} style ={{resizeMode: "contain",
+            height: 100,
+            width: 100}}/>
             <h1>{campus.name}</h1>
           </Link>
           <h3>{campus.address}</h3>
