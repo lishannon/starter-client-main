@@ -13,6 +13,7 @@ class NewStudentContainer extends Component {
           firstname: "", 
           lastname: "", 
           email:"",
+          gpa:"",
           campusId: null, 
           redirect: false, 
           redirectId: null
@@ -33,7 +34,8 @@ class NewStudentContainer extends Component {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             campusId: this.state.campusId,
-            email:this.state.email
+            email:this.state.email,
+            gpa:this.state.gpa
         };
 
         // check if the input is an email
@@ -41,6 +43,9 @@ class NewStudentContainer extends Component {
         if (!vaildEmail.test(student.email)) {
           return false;
         }
+        // if ((0.0 < student.gpa) && (4.0 > student.gpa)){
+        //   student.gpa = null;
+        // }
 
         let newStudent = await this.props.addStudent(student);
 
@@ -48,6 +53,7 @@ class NewStudentContainer extends Component {
           firstname: "", 
           lastname: "", 
           email:"",
+          gpa:"",
           campusId: null, 
           redirect: true, 
           redirectId: newStudent.id
