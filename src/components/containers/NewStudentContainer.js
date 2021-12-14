@@ -35,6 +35,8 @@ class NewStudentContainer extends Component {
             email:this.state.email
         };
         
+        // check if the input is an email
+
         let newStudent = await this.props.addStudent(student);
 
         this.setState({
