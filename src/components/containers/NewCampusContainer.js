@@ -13,7 +13,6 @@ class NewStudentContainer extends Component {
           firstname: "", 
           lastname: "", 
           email:"",
-          gpa:"",
           campusId: null, 
           redirect: false, 
           redirectId: null
@@ -29,31 +28,19 @@ class NewStudentContainer extends Component {
     handleSubmit = async event => {
         event.preventDefault();
 
-
         let student = {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             campusId: this.state.campusId,
-            email:this.state.email,
-            gpa:this.state.gpa
+            email:this.state.email
         };
-
-        // check if the input is an email
-        var vaildEmail = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-        if (!vaildEmail.test(student.email)) {
-          return false;
-        }
-        // if ((0.0 < student.gpa) && (4.0 > student.gpa)){
-        //   student.gpa = null;
-        // }
-
+        
         let newStudent = await this.props.addStudent(student);
 
         this.setState({
           firstname: "", 
           lastname: "", 
           email:"",
-          gpa:"",
           campusId: null, 
           redirect: true, 
           redirectId: newStudent.id
