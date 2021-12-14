@@ -20,7 +20,7 @@ const AllStudentsView = (props) => {
         let name = student.firstname + " " + student.lastname;
         return (
           <div key={student.id}>
-            <img src ={student.imageURL} style ={{resizeMode: "contain",
+            <img src ={student.imageURL} alt= {"student"}style ={{resizeMode: "contain",
           height: 200,
             width: 250}}/>
           <Link to={`/student/${student.id}`}>
