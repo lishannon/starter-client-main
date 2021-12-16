@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const AllStudentsView = (props) => {
-  const {students, deleteStudent} = props;
+  const {students, deleteStudent, editStudent} = props;
 
   if (!students.length) {
     return (
@@ -28,6 +28,7 @@ const AllStudentsView = (props) => {
             <h4>{student.gpa}</h4>
           </Link>
           <button onClick={() => deleteStudent(student.id)}>Delete</button>
+          <button onClick={() => editStudent(student)}>Edit</button>
           </div>
         );
       }
