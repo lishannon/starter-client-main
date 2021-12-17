@@ -27,7 +27,7 @@ const AllStudentsView = (props) => {
             <h1>{name}</h1>
             <h4>{student.gpa}</h4>
           </Link>
-          <button onClick={() => deleteStudent(student.id)}>Delete</button>
+          <button onClick={() => deleteStudent(student.id)}>X</button>
           <button onClick={() => editStudent(student)}>Edit</button>
           </div>
         );
