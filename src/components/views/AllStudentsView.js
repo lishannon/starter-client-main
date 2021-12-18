@@ -28,7 +28,11 @@ const AllStudentsView = (props) => {
             <h4>{student.gpa}</h4>
           </Link>
           <button onClick={() => deleteStudent(student.id)}>X</button>
-          <button onClick={() => editStudent(student)}>Edit</button>
+          <Link to={`/editStudent`}>
+
+            <button onClick={() => editStudent(student)}>Edit</button>
+          </Link>
+          
           </div>
         );
       }
