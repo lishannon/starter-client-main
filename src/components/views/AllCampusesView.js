@@ -18,8 +18,7 @@ const AllCampusesView = (props) => {
             width: 100}}/>
             <h1>{campus.name}</h1>
           </Link>
-          <h3>{campus.address}</h3>
-          <p>{campus.description}</p>
+         
           <button onClick={() => deleteCampus(campus.id)}>X</button>
         </div>
       )
