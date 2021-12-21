@@ -35,9 +35,9 @@ const useStyles = makeStyles( () => ({
   
 }));
 
-const EditStudentView = (props) => {
+const EditCampusView = (props) => {
 
-  const {handleChange, handleSubmit,student} = props;
+  const {handleChange, handleSubmit,campus} = props;
 
  
   
@@ -52,28 +52,13 @@ const EditStudentView = (props) => {
           </Typography>
         </div>
         <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
-          <label style= {{color:'#11153e', fontWeight: 'bold'}}>First Name: </label>
-          <input type="text" name="firstname" value={student.firstname} onChange ={(e) => handleChange(e)} />
+          <label style= {{color:'#11153e', fontWeight: 'bold'}}>Name: </label>
+          <input type="text" name="firstname" value={campus.name} onChange ={(e) => handleChange(e)} />
           <br/>
           <br/>
 
-          <label style={{color:'#11153e', fontWeight: 'bold'}}>Last Name: </label>
-          <input type="text" name="lastname" value={student.lastname} onChange={(e) => handleChange(e)} />
-          <br/>
-          <br/>
-
-          <label style={{color:'#11153e', fontWeight: 'bold'}}>Gpa: </label>
-          <input type="text" name="gpa" value={student.gpa} onChange={(e) => handleChange(e)} />
-          <br/>
-          <br/>
-
-          <label style={{color:'#11153e', fontWeight: 'bold'}}>Email: </label>
-          <input type="text" name="email" value={student.email} onChange={(e) => handleChange(e)} />
-          <br/>
-          <br/>
-
-          <label style={{color:'#11153e', fontWeight: 'bold'}}>campusId: </label>
-          <input type="text" name="campusId" value={student.campusId} onChange={(e) => handleChange(e)} />
+          <label style={{color:'#11153e', fontWeight: 'bold'}}>Address: </label>
+          <input type="text" name="lastname" value={campus.address} onChange={(e) => handleChange(e)} />
           <br/>
           <br/>
 
@@ -89,4 +74,4 @@ const EditStudentView = (props) => {
   )
 }
 
-export default EditStudentView;
+export default EditCampusView;
